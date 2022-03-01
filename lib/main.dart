@@ -7,22 +7,22 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  WebViewPlusController? controller;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Help'),
-          ),
-          body: WebViewPlus(
-            javascriptMode: JavascriptMode.unrestricted,
-            onWebViewCreated: (controller) {
-              final int? port = controller.serverPort;
-              controller.loadUrl('http://localhost:3000/');
-            },
-          )),
+        appBar: AppBar(
+          title: const Text('Help'),
+        ),
+        body: WebViewPlus(
+          javascriptMode: JavascriptMode.unrestricted,
+          onWebViewCreated: (controller) {
+            final int? port = controller.serverPort;
+            controller.loadUrl('EmbeddedThreeJS/dist/index.html');
+          },
+        ),
+      ),
     );
   }
 }
