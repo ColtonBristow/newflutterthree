@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_plus/webview_flutter_plus.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,28 +7,22 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  WebViewController? _controller;
+  WebViewPlusController? controller;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Help')),
-        body: WebView(
-          javascriptMode: JavascriptMode.unrestricted,
-          backgroundColor: Colors.black,
-          initialUrl: 'about:blank',
-          onWebViewCreated: (WebViewController webViewController) {
-            _controller = webViewController;
-            _loadHtmlFromAssets();
-          },
-        ),
-      ),
+          appBar: AppBar(
+            title: const Text('Help'),
+          ),
+          body: WebViewPlus(
+            javascriptMode: JavascriptMode.unrestricted,
+            onWebViewCreated: (controller) {
+              final int? port = controller.serverPort;
+              controller.loadUrl('http://localhost:3000/');
+            },
+          )),
     );
-  }
-
-  _loadHtmlFromAssets() async {
-    String fileText = await rootBundle.loadString('EmbeddedThreeJS/EmbeddedThreeJS/index.html');
-    _controller!.loadUrl(Uri.dataFromString(fileText, mimeType: 'text/html', encoding: Encoding.getByName('UTF-8')).toString());
   }
 }

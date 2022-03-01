@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   webview_flutter: ^3.0.1
+  webview_flutter_plus: ^0.3.0+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -58,29 +59,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - EmbeddedThreeJS/EmbeddedThreeJS/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/
-    - EmbeddedThreeJS/EmbeddedThreeJS/main.js
-    - EmbeddedThreeJS/EmbeddedThreeJS/mesh/
-    - EmbeddedThreeJS/EmbeddedThreeJS/mesh/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/.vite/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/esbuild/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/esbuild-darwin-arm64/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/fsevents/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/function-bind/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/has/ 
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/is-core-module/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/nanoid/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/path-parse/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/picocolors/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/postcss/ 
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/resolve/ 
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/rollup/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/source-map-js/ 
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/supports-preserve-symlinks-flag/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/three/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/vite/
-    - EmbeddedThreeJS/EmbeddedThreeJS/node_modules/.bin/
+    - EmbeddedThreeJS/
+    - EmbeddedThreeJS/dist/
+    - EmbeddedThreeJS/dist/assets/
+    - EmbeddedThreeJS/dist/index.html
 
   # To add assets to your application, add an assets section, like this:
   # assets:
